@@ -20,6 +20,16 @@ class Rectangle
      Console.WriteLine("Width: {0}", width);
      Console.WriteLine("Area: {0}", GetArea());
   }
+
+  public void Draw()
+  {
+    for (int i = 0; i < length; i ++)
+    {
+      for (int j = 0; j < width; j++)
+        Console.Write("#");
+      Console.WriteLine();
+    }
+  }
 }
 
 class ExecuteRectangle
@@ -35,6 +45,7 @@ class ExecuteRectangle
        width = Double.Parse(args[1]);
        r.AcceptDetails(length, width);
        r.Display();
+       r.Draw();
      }
      catch (IndexOutOfRangeException)
      {
